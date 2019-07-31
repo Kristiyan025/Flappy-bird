@@ -1,0 +1,136 @@
+body{
+	width: 100vw;
+	height: 100vh;
+    margin:0;
+	padding:0;
+	display: flex;
+	justify-content: center;
+	position: relative;	
+	background: linear-gradient(225deg, rgba(69, 182, 73, 0.7), rgba(220, 227, 91, 0.7));
+}
+#game{	
+	--height: 400px;
+   	width: 650px;
+	height: var(--height);
+	margin-top: calc((100vh - var(--height)) / 2);
+	position: relative;
+	border: 25px solid;
+  	border-image-source: url("../images/game-border.png");
+  	border-image-slice: 18.75% 12.5%;
+}
+#defaultCanvas0{
+	margin:0;
+	padding:0;
+	
+}
+.start{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    z-index:2;
+}
+
+.points
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 35px;
+	padding: 4px 0 0 10px;
+	z-index: 2;
+	font-family: cursive;
+	font-size: 25px;
+	color: white;
+	text-shadow: 1px  0px black,
+				-1px  0px black,
+				 0px  1px black,
+				 0px -1px black,
+				 3px  1px 10px black;
+}
+
+.win
+{
+	--width: 400px;
+	--height: 200px;
+	width: var(--width);
+	height: var(--height);
+	position: absolute;
+	top: calc((100% - var(--height)) / 2);
+	left: calc((100% - var(--width)) / 2);
+	z-index: 10;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.4s ease-in-out;
+}
+
+.win::before
+{
+	content: "";
+	position: absolute;
+	top: calc(-1 * (100vh - 100%) / 2);
+	left: calc(-1 * (100vw - 100%) / 2);
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.win .win-font
+{
+	font-family: sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	color: #96f1ff;
+	text-transform: uppercase;
+	text-shadow: 3px 1px 10px black;
+}
+
+.win .lbl-win
+{
+	display: inline;
+	float: left;
+}
+
+.win .finish-points,
+.win .best-points
+{
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+	float: right;
+	width: 40%;
+	text-align: right;
+}
+
+.win .again
+{
+	--width: 200px;
+	--height: 60px;
+	width: var(--width);
+	height: var(--height);
+	margin: 100px calc((100% - var(--width)) / 2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: calc(var(--height) / 2);
+	background: linear-gradient(135deg, #373b44, #4286f4);
+	color: white;
+	font-family: cursive;
+	font-size: 30px;
+	text-shadow: 1px  0px black,
+				-1px  0px black,
+				 0px  1px black,
+				 0px -1px black,
+				 3px  1px 10px black;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+}
+
+#game .start:hover,
+.win .again:hover
+{
+	cursor: pointer;
+}

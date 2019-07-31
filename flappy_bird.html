@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Flappy bird</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/mini-games.css">
+    <meta charset="utf-8" />
+
+    </head>
+    <body>        
+        <div id="game">
+            <img class="start"  onclick="start_game()" alt="Start button"
+                 src="images/start_button.png"/>
+            <div class="points">Points: 0</div>
+		</div>
+        <div class="win">
+            <label class="lbl-win win-font" for="finish-points">Points:</label>
+            <p class="finish-points win-font"><!--Content created in JS file--></p>
+            <br/><br/><br/><br/><br/><br/>
+            <label class="lbl-win win-font" for="best-points">Best Points:</label>
+            <p class="best-points win-font"><!--Content created in JS file--></p>
+            <div class="again" onclick="restart()">Try Again</div>
+        </div>
+
+        <script src="./javaScript/flappy_bird.js"></script>
+        <script src="./javaScript/bird.js" type="text/javascript"></script>
+        <script src="./javaScript/pipe.js" type="text/javascript"></script> 
+    </body>
+</html>
